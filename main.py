@@ -1,6 +1,4 @@
 #Main del proyecto final de Python - Carlos Sánchez Damas
-from funcionesBiblio import *
-
 def main():
     print(f"=============================")
     print(f"    GESTIÓN DE BIBLIOTECA    ")
