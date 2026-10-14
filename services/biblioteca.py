@@ -5,11 +5,13 @@ class Biblioteca:
         self.usuarios = []
         self.prestamos = []
 
+
     def registrarLibro(self, libro):
         if self.buscarLibro(libro):
             print(f"Este libro ya está en la lista.")
             return
         self.libros.append(libro)
+
 
     def buscarLibro(self, libroNuevo):
         for libro in self.libros:

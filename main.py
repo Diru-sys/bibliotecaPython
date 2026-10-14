@@ -17,6 +17,7 @@ def mostrarMenu():
     print("8. Mostrar préstamos de un usuario")
     print("9. Guardar datos")
     print("0. Salir")
+    print("===========================\n")
 
 
 def main():
