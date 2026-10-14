@@ -12,4 +12,7 @@ class Biblioteca:
         self.libros.append(libro)
 
     def buscarLibro(self, libroNuevo):
-        return next((libro for libro in self.libros if libro == libroNuevo), None)
+        for libro in self.libros:
+            if libro.__eq__(libroNuevo):
+                return libro
+        return None
