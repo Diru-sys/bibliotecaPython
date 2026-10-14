@@ -1,16 +1,51 @@
 from model.libro import Libro
 from model.prestamo import Prestamo
 from model.usuario import Usuario
+from services.biblioteca import Biblioteca
+
+def mostrarMenu():
+    print("===========================")
+    print("   GESTIÓN DE BIBLIOTECA   ")
+    print("===========================")
+    print("1. Registrar libro")
+    print("2. Registrar usuario")
+    print("3. Buscar libro")
+    print("4. Listar libros")
+    print("5. Realizar préstamo")
+    print("6. Devolver libro")
+    print("7. Mostrar préstamos activos")
+    print("8. Mostrar préstamos de un usuario")
+    print("9. Guardar datos")
+    print("0. Salir")
+
 
 def main():
-    libro1 = Libro(978, 'Aprende D&D', 'Carlos', 'Fantasía')
-    print(libro1)
-
-    usuario1 = Usuario(1, 'Carlos', 'Sánchez Damas', 'dirusetterelos@gmail.com')
-    print(usuario1)
-
-    prestamo1 = Prestamo(1, 978)
-    print(prestamo1)
+    while True:
+        mostrarMenu()
+        opc = input ("Opción: ")
+        match opc:
+            case 1:
+                pass
+            case 2:
+                pass
+            case 3:
+                pass
+            case 4:
+                pass
+            case 5:
+                pass
+            case 6:
+                pass
+            case 7:
+                pass
+            case 8:
+                pass
+            case 9:
+                pass
+            case 0:
+                pass
+            case _:
+                print(f"Opción introducida invalida.")
 
 
 if __name__ == "__main__":
