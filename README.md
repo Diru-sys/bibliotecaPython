@@ -14,7 +14,9 @@ biblioteca/
 - util/
 - - entrada.py
 - data/
-- - ficheros.json
+- - libros.json
+- - prestamos.json
+- - usuarios.json
 
 ## AUTOR
 * Carlos Sánchez Damas
