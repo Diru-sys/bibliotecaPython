@@ -8,4 +8,5 @@ class Libro:
         self.disponible = disponible
 
     def __str__(self):
-        return f"ISBN: {self.isbn} - Titulo: {self.titulo} - Autor: {self.autor} - Año: {self.año} - Género: {self.genero} - Disponible? -> {self.disponible}"
+        estado = "Disponible" if self.disponible else "Prestado"
+        return f"ISBN: {self.isbn} - Titulo: {self.titulo} - Autor: {self.autor} - Año: {self.año} - Género: {self.genero} - Disponible? -> {estado}"
