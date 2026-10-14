@@ -5,5 +5,6 @@ class Usuario:
         self.apellidos = apellidos
         self.email = email
 
+
     def __str__(self):
         return f"ID del usuario: {self.id} - Nombre: {self.nombre} - Apellidos: {self.apellidos} - Email: {self.email}"

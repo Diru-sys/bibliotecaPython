@@ -7,12 +7,14 @@ class Prestamo:
         self.fechaPrestamo = (fechaPrestamo if fechaPrestamo is not None else date.today())
         self.fechaDevolucion = fechaDevolucion
 
+
     @property
     def activo(self):
         if self.fechaDevolucion is None:
             return
         else:
             return False
+
 
     def __str__(self):
         estado = "Activo" if self.activo else f"Devuelto en la fecha: {self.fechaDevolucion}"

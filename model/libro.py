@@ -7,6 +7,11 @@ class Libro:
         self.año = año
         self.disponible = disponible
 
+
     def __str__(self):
         estado = "Disponible" if self.disponible else "Prestado"
         return f"ISBN: {self.isbn} - Titulo: {self.titulo} - Autor: {self.autor} - Género: {self.genero} - Año: {self.año} - Disponible? -> {estado}"
+
+
+    def __eq__(self, __value: object) -> bool:
+        return self.isbn == __value.isbn
