@@ -4,7 +4,6 @@
 ## ESTRUCTURA
 biblioteca/
 - main.py
-- excepciones.py
 - model/
 - - libro.py
 - - usuario.py
