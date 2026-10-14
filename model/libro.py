@@ -1,9 +1,3 @@
-#ISBN
-#titulo
-#autor
-#año
-#genero
-#disponible
 class Libro:
     def __init__(self, isbn, titulo, autor, año, genero, disponible):
         self.isbn = isbn
@@ -12,3 +6,6 @@ class Libro:
         self.año = año
         self.genero = genero
         self.disponible = disponible
+
+    def __str__(self):
+        return f"ISBN: {self.isbn} - Titulo: {self.titulo} - Autor: {self.autor} - Año: {self.año} - Género: {self.genero} - Disponible? -> {self.disponible}"
