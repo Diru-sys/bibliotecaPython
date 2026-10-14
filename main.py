@@ -3,6 +3,17 @@ from model.prestamo import Prestamo
 from model.usuario import Usuario
 from services.biblioteca import Biblioteca
 
+def registrarLibro(biblioteca):
+    isbn = input("ISBN: ").strip()
+    titulo = input("Título: ").strip()
+    autor = input("Autor: ").strip()
+    año = input("Año: ").strip()
+    genero = input("Género: ").strip()
+
+    libro = Libro(isbn,titulo,autor,año,genero)
+    biblioteca.registrarLibro(libro)
+
+
 def mostrarMenu():
     print("===========================")
     print("   GESTIÓN DE BIBLIOTECA   ")
