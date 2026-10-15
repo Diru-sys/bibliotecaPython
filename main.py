@@ -28,6 +28,21 @@ def registrarUsuario(biblioteca):
     print(f"Usuario registrado correctamente.")
 
 
+def buscarLibro(biblioteca):
+    tituloBuscado = input("Introduce el titulo del libro: ").strip()
+    for libro in biblioteca.libros:
+        if tituloBuscado.lower() == libro.titulo.lower():
+            print(f"Libro encontrado: ")
+            return print(libro)
+    return f"No existe un libro con este titulo."
+
+
+def mostrarLibros(biblioteca):
+    print(f" --LISTADO DE LIBROS-- ")
+    for libro in biblioteca.libros:
+        print(libro)
+
+
 def mostrarMenu():
     print("===========================")
     print("   GESTIÓN DE BIBLIOTECA   ")
@@ -52,11 +67,11 @@ def main():
             case 1:
                 registrarLibro(biblioteca)
             case 2:
-                pass
+                registrarUsuario(biblioteca)
             case 3:
-                pass
+                buscarLibro(biblioteca)
             case 4:
-                pass
+                mostrarLibros(biblioteca)
             case 5:
                 pass
             case 6:
