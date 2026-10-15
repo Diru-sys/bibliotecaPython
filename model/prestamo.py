@@ -10,13 +10,16 @@ class Prestamo:
 
     @property
     def activo(self):
-        if self.fechaDevolucion is None:
-            return
-        else:
-            return False
+        return self.fechaDevolucion is None
+
+
+    def devolver(self, fecha=None):
+        self.fechaDevolucion = fecha if fecha is not None else date.today()
+
 
     def __eq__(self, __value: object) -> bool:
         return self.usuario == __value.usuario and self.libro == __value.libro
+
 
     def __str__(self):
         estado = "Activo" if self.activo else f"Devuelto en la fecha: {self.fechaDevolucion}"

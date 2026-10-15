@@ -21,10 +21,13 @@ class Biblioteca:
 
 
     def realizarPrestamo(self, prestamo):
-        if self.buscarPrestamo(prestamo):
+        if self.buscarPrestamoActivo(prestamo.usuario, prestamo.libro):
             print(f"El prestamo ya está realizado.")
             return
-        self.usuarios.append(prestamo)
+        self.prestamos.append(prestamo)
+        libro = self.buscarLibroPorIsbn(prestamo.libro)
+        if libro is not None:
+            libro.disponible = False
 
 
     def buscarUsuario(self, usuarioNuevo):
@@ -41,8 +44,8 @@ class Biblioteca:
         return None
 
 
-    def buscarPrestamo(self, prestamoNuevo):
+    def buscarPrestamoActivo(self, idUsuario, isbn):
         for prestamo in self.prestamos:
-            if prestamo.__eq__(prestamoNuevo):
+            if prestamo.usuario == idUsuario and prestamo.libro == isbn and prestamo.activo:
                 return prestamo
         return None

@@ -50,6 +50,18 @@ def realizarPrestamo(biblioteca):
     prestamo = Prestamo(idUsuario, isbnLibro)
     biblioteca.realizarPrestamo(prestamo)
 
+
+def devolverLibro(biblioteca):
+    prestamo = buscarPrestamoActivo(idUsuario, isbn)
+    if prestamo is None:
+        return False
+    prestamo.devolver()
+    libro = buscarLibroPorIsbn(isbn)
+    if libro is not None:
+        libro.disponible = True
+    return True
+
+
 def mostrarMenu():
     print("===========================")
     print("   GESTIÓN DE BIBLIOTECA   ")
@@ -80,9 +92,9 @@ def main():
             case 4:
                 mostrarLibros(biblioteca)
             case 5:
-                pass
+                realizarPrestamo(biblioteca)
             case 6:
-                pass
+                devolverLibro(biblioteca)
             case 7:
                 pass
             case 8:
