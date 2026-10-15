@@ -13,6 +13,20 @@ class Biblioteca:
         self.libros.append(libro)
 
 
+    def registrarUsuario(self, usuario):
+        if self.buscarUsuario(usuario):
+            print(f"Este usuario ya está en la lista.")
+            return
+        self.usuarios.append(usuario)
+
+
+    def buscarUsuario(self, usuarioNuevo):
+        for usuario in self.usuarios:
+            if usuario.__eq__(usuarioNuevo):
+                return usuario
+        return None
+
+
     def buscarLibro(self, libroNuevo):
         for libro in self.libros:
             if libro.__eq__(libroNuevo):

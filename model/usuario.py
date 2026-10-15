@@ -6,5 +6,9 @@ class Usuario:
         self.email = email
 
 
+    def __eq__(self, __value: object) -> bool:
+        return self.id == __value.id
+
+
     def __str__(self):
         return f"ID del usuario: {self.id} - Nombre: {self.nombre} - Apellidos: {self.apellidos} - Email: {self.email}"

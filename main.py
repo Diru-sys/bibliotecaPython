@@ -17,6 +17,17 @@ def registrarLibro(biblioteca):
     print(f"Libro registrado correctamente.")
 
 
+def registrarUsuario(biblioteca):
+    id = input("ID: ").strip()
+    nombre = input("Nombre: ").strip()
+    apellidos = input("Apellidos: ").strip()
+    email = input("Email: ").strip()
+
+    usuario = Usuario(id,nombre,apellidos,email)
+    biblioteca.registrarUsuario(usuario)
+    print(f"Usuario registrado correctamente.")
+
+
 def mostrarMenu():
     print("===========================")
     print("   GESTIÓN DE BIBLIOTECA   ")
