@@ -52,14 +52,13 @@ def realizarPrestamo(biblioteca):
 
 
 def devolverLibro(biblioteca):
-    prestamo = buscarPrestamoActivo(idUsuario, isbn)
-    if prestamo is None:
-        return False
-    prestamo.devolver()
-    libro = buscarLibroPorIsbn(isbn)
-    if libro is not None:
-        libro.disponible = True
-    return True
+    idUsuario = input("ID del Usuario: ").strip()
+    isbnLibro = input("ISBN del libro: ").strip()
+
+    if biblioteca.devolverLibro(idUsuario, isbnLibro):
+        print("Libro devuelto correctamente.")
+    else:
+        print("No hay ningún préstamo activo de ese libro para ese usuario.")
 
 
 def mostrarMenu():

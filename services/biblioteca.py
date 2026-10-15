@@ -1,4 +1,6 @@
 #funciones, lógica
+from model.libro import Libro
+
 class Biblioteca:
     def __init__(self):
         self.libros = []
@@ -25,7 +27,7 @@ class Biblioteca:
             print(f"El prestamo ya está realizado.")
             return
         self.prestamos.append(prestamo)
-        libro = self.buscarLibroPorIsbn(prestamo.libro)
+        libro = self.buscarLibro(Libro(prestamo.libro, "", "", ""))
         if libro is not None:
             libro.disponible = False
 
