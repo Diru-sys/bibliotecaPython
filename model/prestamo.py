@@ -1,9 +1,9 @@
 from datetime import date
 
 class Prestamo:
-    def __init__(self, idUsuario, isbnLibro, fechaPrestamo=None, fechaDevolucion=None):
-        self.idUsuario = idUsuario
-        self.isbnLibro = isbnLibro
+    def __init__(self, usuario, libro, fechaPrestamo=None, fechaDevolucion=None):
+        self.usuario = usuario
+        self.libro = libro
         self.fechaPrestamo = (fechaPrestamo if fechaPrestamo is not None else date.today())
         self.fechaDevolucion = fechaDevolucion
 
@@ -15,7 +15,9 @@ class Prestamo:
         else:
             return False
 
+    def __eq__(self, __value: object) -> bool:
+        return self.usuario == __value.usuario and self.libro == __value.libro
 
     def __str__(self):
         estado = "Activo" if self.activo else f"Devuelto en la fecha: {self.fechaDevolucion}"
-        return f"ID del usuario del préstamo: {self.idUsuario} - ISBN del libro a prestar: {self.isbnLibro} - Fecha del prestamo: {self.fechaPrestamo} - Fecha de la devolución: {self.fechaDevolucion}"
+        return f"Usuario del prestamo: {self.usuario} - Libro a prestar: {self.libro} - Fecha del prestamo: {self.fechaPrestamo} - Fecha de la devolución: {self.fechaDevolucion}"

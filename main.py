@@ -43,6 +43,13 @@ def mostrarLibros(biblioteca):
         print(libro)
 
 
+def realizarPrestamo(biblioteca):
+    idUsuario = input("ID del Usuario: ").strip()
+    isbnLibro = input("ID del Usuario: ").strip()
+
+    prestamo = Prestamo(idUsuario, isbnLibro)
+    biblioteca.realizarPrestamo(prestamo)
+
 def mostrarMenu():
     print("===========================")
     print("   GESTIÓN DE BIBLIOTECA   ")
