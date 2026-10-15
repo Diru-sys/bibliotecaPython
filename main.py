@@ -3,6 +3,8 @@ from model.prestamo import Prestamo
 from model.usuario import Usuario
 from services.biblioteca import Biblioteca
 
+biblioteca = Biblioteca()
+
 def registrarLibro(biblioteca):
     isbn = input("ISBN: ").strip()
     titulo = input("Título: ").strip()
@@ -12,6 +14,7 @@ def registrarLibro(biblioteca):
 
     libro = Libro(isbn,titulo,autor,año,genero)
     biblioteca.registrarLibro(libro)
+    print(f"Libro registrado correctamente.")
 
 
 def mostrarMenu():
@@ -27,17 +30,16 @@ def mostrarMenu():
     print("7. Mostrar préstamos activos")
     print("8. Mostrar préstamos de un usuario")
     print("9. Guardar datos")
-    print("0. Salir")
-    print("===========================\n")
+    print("0. Salir\n")
 
 
 def main():
     while True:
         mostrarMenu()
-        opc = input ("Opción: ")
+        opc = int(input("Opción: "))
         match opc:
             case 1:
-                pass
+                registrarLibro(biblioteca)
             case 2:
                 pass
             case 3:
@@ -55,7 +57,7 @@ def main():
             case 9:
                 pass
             case 0:
-                pass
+                exit
             case _:
                 print(f"Opción introducida invalida.")
 
